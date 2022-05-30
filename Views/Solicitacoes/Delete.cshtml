@@ -1,0 +1,45 @@
+﻿@model ProvaTecnica_ControleAlugueis.Models.Solicitacao
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h1>Deletar</h1>
+
+<h3>Você tem certeza que deseja deletar isso?</h3>
+<div>
+    <h4>Solicitação</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ferramenta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ferramenta.Id)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QtdFerramentas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QtdFerramentas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QtdDias)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QtdDias)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-outline-danger" /> |
+        <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
+    </form>
+</div>

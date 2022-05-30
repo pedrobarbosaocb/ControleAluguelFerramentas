@@ -1,0 +1,58 @@
+﻿@model ProvaTecnica_ControleAlugueis.Models.Ferramenta
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<h4>Ferramenta</h4>
+<hr />
+<div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="col-8">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label asp-for="EstMax" class="control-label"></label>
+                <input asp-for="EstMax" class="form-control" />
+                <span asp-validation-for="EstMax" class="text-danger"></span>
+            </div>
+            <div class="col-3">
+                <label asp-for="EstMin" class="control-label"></label>
+                <input asp-for="EstMin" class="form-control" />
+                <span asp-validation-for="EstMin" class="text-danger"></span>
+            </div>
+            <div class="col-3">
+                <label asp-for="EstAtu" class="control-label"></label>
+                <input asp-for="EstAtu" class="form-control" />
+                <span asp-validation-for="EstAtu" class="text-danger"></span>
+            </div>
+            <div class="col-3" style="padding-bottom:10px;">
+                <label asp-for="PrecoDiaria" class="control-label"></label>
+                <input asp-for="PrecoDiaria" class="form-control" />
+                <span asp-validation-for="PrecoDiaria" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Salvar" class="btn btn-outline-primary" />
+            <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,49 @@
+﻿@model ProvaTecnica_ControleAlugueis.Models.Solicitacao
+
+@{
+    ViewData["Title"] = "Adicionar";
+}
+
+<h1>Adicionar</h1>
+
+<h4>Solicitação</h4>
+<hr />
+<div>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-3">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <select asp-for="ClienteId" class ="form-control" asp-items="ViewBag.ClienteId"></select>
+            </div>
+            <div class="col-3">
+                <label asp-for="FerramentaId" class="control-label"></label>
+                <select asp-for="FerramentaId" class ="form-control" asp-items="ViewBag.FerramentaId"></select>
+            </div>
+        </div>
+        <div class="row" style="padding-bottom:10px;">
+            <div class="col-3">
+                <label asp-for="QtdFerramentas" class="control-label"></label>
+                <input asp-for="QtdFerramentas" class="form-control" placeholder="Ex.: 30"/>
+                <span asp-validation-for="QtdFerramentas" class="text-danger"></span>
+            </div>
+            <div class="col-3">
+                <label asp-for="QtdDias" class="control-label"></label>
+                <input asp-for="QtdDias" class="form-control" placeholder="Ex.: 10"/>
+                <span asp-validation-for="QtdDias" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Adicionar" class="btn btn-outline-primary" />
+            <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

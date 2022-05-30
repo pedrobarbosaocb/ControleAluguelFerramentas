@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProvaTecnica_ControleAlugueis.Models.Solicitacao>
+
+@{
+    ViewData["Title"] = "Solicitações";
+}
+
+<h1>Solicitações</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary btn-sm">Adicionar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ferramenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdFerramentas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdDias)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ferramenta.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdFerramentas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdDias)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"    class="btn btn-outline-light">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"  class="btn btn-outline-danger">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
