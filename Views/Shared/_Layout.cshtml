@@ -17,13 +17,26 @@
             padding-top: 5px;
         }
 
+        img {
+            height:30px;
+        }
+
+        .navbar-brand img {
+            opacity:75%;
+            transition: 300ms ease;
+        }
+
+        .navbar-brand img:hover {
+            opacity:100%;
+        }
+
     </style>
 </head>
 <body style="background-color:#141414; color:antiquewhite">
     <header>
         <nav class="navbar  navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Aluguel Ferramentas</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Circle-icons-tools.svg/1024px-Circle-icons-tools.svg.png" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
